@@ -1,0 +1,99 @@
+#welcome-text {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: large;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.card1,
+.card3 {
+  display: inline-block;
+  box-shadow: rgba(0, 0, 0, 0.15) 5.95px 5.95px 9.6px;
+  width: 250px;
+  height: 200px;
+  padding: 20px;
+  margin: 20px;
+  margin-top: 50px;
+  background-color: #ff835e;
+  color: black;
+  border-radius: 0.6rem;
+}
+.card1 > svg {
+  display: block;
+  margin: auto;
+}
+.card1 > h1 {
+  text-align: center;
+}
+.card1 > h2 {
+  text-align: center;
+}
+.card1 > h3 {
+  text-align: center;
+  font-size: small;
+  font-weight: 500;
+}
+.card2,
+.card4 {
+  display: inline-block;
+  box-shadow: rgba(0, 0, 0, 0.15) 5.95px 5.95px 9.6px;
+  width: 250px;
+  height: 200px;
+  padding: 20px;
+  margin: 20px;
+  margin-top: 50px;
+  background-color: #fda655;
+  color: black;
+  border-radius: 0.6rem;
+}
+.card2 > svg {
+  display: block;
+  margin: auto;
+}
+.card2 > h1 {
+  text-align: center;
+}
+.card2 > h2 {
+  text-align: center;
+}
+.card2 > h3 {
+  text-align: center;
+  font-size: small;
+  font-weight: 500;
+}
+.card3 > svg {
+  display: block;
+  margin: auto;
+}
+.card3 > h1 {
+  text-align: center;
+}
+.card3 > h2 {
+  text-align: center;
+}
+.card3 > h3 {
+  text-align: center;
+  font-size: small;
+  font-weight: 500;
+}
+.card4 > svg {
+  display: block;
+  margin: auto;
+}
+.card4 > h1 {
+  text-align: center;
+}
+.card4 > h2 {
+  text-align: center;
+}
+.card4 > h3 {
+  text-align: center;
+  font-size: small;
+  font-weight: 500;
+}
