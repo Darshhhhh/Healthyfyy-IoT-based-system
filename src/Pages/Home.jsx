@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
 import { Row, Col, Container, CardGroup, Card } from "react-bootstrap";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import * as FaIcons from "react-icons/fa";
+import Temperature from "./Temperature";
 function Home() {
+  // const [data, setData] = useState([]);
+
+  // const apifetch = () => {
+  //   fetch("https://reactinfotesting123.000webhostapp.com/temptable.php")
+  //     .then((response) => response.json())
+  //     .then((json) => {
+  //       setData(json.Temp_Data);
+  //     });
+  // };
+  // useEffect(() => {
+  //   apifetch();
+  //   const interval = setInterval(() => {
+  //     apifetch();
+  //   }, 1000);
+  //   return () => clearInterval(interval);
+  // }, []);
   return (
     <div className="home">
       <Navbar />
@@ -28,6 +45,12 @@ function Home() {
                 <path d="M0 0h24v24H0V0z" fill="none" />
                 <path d="M15 13V5c0-1.66-1.34-3-3-3S9 3.34 9 5v8c-1.21.91-2 2.37-2 4 0 2.76 2.24 5 5 5s5-2.24 5-5c0-1.63-.79-3.09-2-4zm-4-8c0-.55.45-1 1-1s1 .45 1 1h-1v1h1v2h-1v1h1v2h-2V5z" />
               </svg>
+              {/* <div style={{ height: "40px" }}>
+                {data.map((mydata) => (
+                  <h1>{mydata.TEMP_VALUE}°F</h1>
+                ))}
+              </div> */}
+
               <h1>98°F</h1>
               <h2>Tempereture</h2>
               <h3>(Ideal Tempereture : 98.6°F)</h3>

@@ -10,8 +10,21 @@ import "./Navbar.css";
 import { IconContext, BiSearchAlt } from "react-icons";
 import { Form, FormControl, Button } from "react-bootstrap";
 import Home from "../Pages/Home";
+import { useUserAuth } from "../context/UserAuthContext";
+// import { BrowserRouter as useNavigate } from "react-router";
+
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
+  const { logOut, user } = useUserAuth();
+
+  const handleLogout = async () => {
+    try {
+      await logOut();
+      history.push("/");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   const showSidebar = () => setSidebar(!sidebar);
   const history = useHistory();
@@ -48,7 +61,7 @@ function Navbar() {
             </button> */}
             <div class="dropdown">
               <button class="dropbtn">
-                Darsh Shah
+                {user.email}
                 <img
                   style={{ marginLeft: "5px" }}
                   src="https://img.icons8.com/ios-glyphs/15/ffffff/sort-down.png"
@@ -57,7 +70,10 @@ function Navbar() {
               <div class="dropdown-content">
                 <a href="#">My Profile</a>
                 <a href="#">Settings</a>
-                <a onClick={loginpage}>Log Out</a>
+
+                <a onClick={handleLogout} style={{ padding: "0px" }}>
+                  <Link to="/">Log In</Link>
+                </a>
               </div>
             </div>
           </div>

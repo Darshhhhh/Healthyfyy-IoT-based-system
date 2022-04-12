@@ -10,6 +10,7 @@ import Ecg from "./Pages/Ecg";
 import Support from "./Pages/Support";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
+import { UserAuthContextProvider } from "./context/UserAuthContext";
 // import Reports from "./pages/Reports";
 // import Products from "./pages/Products";
 function App() {
@@ -17,16 +18,18 @@ function App() {
     <>
       <div className="App">
         <Router>
-          <Switch>
-            <Route path="/" exact component={Login} />
-            <Route path="/Home" component={Home} />
-            <Route path="/Tempereture-data" component={Temperature} />
-            <Route path="/Oxygen-data" component={Oxygen} />
-            <Route path="/Pulse-data" component={Pulse} />
-            <Route path="/ECG-data" component={Ecg} />
-            <Route path="/Support" component={Support} />
-            <Route path="/Signup" component={Signup} />
-          </Switch>
+          <UserAuthContextProvider>
+            <Switch>
+              <Route path="/" exact component={Login} />
+              <Route path="/Home" component={Home} />
+              <Route path="/Tempereture-data" component={Temperature} />
+              <Route path="/Oxygen-data" component={Oxygen} />
+              <Route path="/Pulse-data" component={Pulse} />
+              <Route path="/ECG-data" component={Ecg} />
+              <Route path="/Support" component={Support} />
+              <Route path="/Signup" component={Signup} />
+            </Switch>
+          </UserAuthContextProvider>
         </Router>
       </div>
     </>

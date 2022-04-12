@@ -37,6 +37,16 @@
   font-weight: 600;
   cursor: pointer;
   margin-top: 10px;
+  margin-bottom: 10px;
+}
+.extra-text{
+  margin-top: 10px;
+  text-align: center;
+}
+.login-text{
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -5px;
 }
 .SignupScreen > form > h4 {
   text-align: left;
