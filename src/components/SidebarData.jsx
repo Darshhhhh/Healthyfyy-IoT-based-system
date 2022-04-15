@@ -21,7 +21,7 @@ export const SidebarData = [
   {
     title: "Oxygen Data",
     path: "/Oxygen-data",
-    icon: <FaIcons.FaHeartbeat />,
+    icon: <IoIcons.IoMdSpeedometer />,
     cName: "nav-text",
   },
   {
@@ -33,7 +33,7 @@ export const SidebarData = [
   {
     title: "ECG Data",
     path: "/ECG-data",
-    icon: <RiIcons.RiHeartPulseFill />,
+    icon: <RiIcons.RiHeartPulseLine />,
     cName: "nav-text",
   },
   {

@@ -11,6 +11,9 @@
   justify-content: center;
   text-align: center;
 }
+#hr{
+ width: 50%;
+}
 .card1,
 .card3 {
   display: inline-block;
@@ -39,6 +42,24 @@
   font-size: small;
   font-weight: 500;
 }
+.card1:hover{
+  transition: 0.25s;
+  transform:scale(1.08);
+}
+.card2:hover{
+  transition: 0.25s;
+  transform:scale(1.08);
+}
+.card3:hover{
+  transition: 0.25s;
+  transform:scale(1.08);
+}
+.card4:hover{
+  transition: 0.25s;
+  transform:scale(1.08);
+}
+
+
 .card2,
 .card4 {
   display: inline-block;
