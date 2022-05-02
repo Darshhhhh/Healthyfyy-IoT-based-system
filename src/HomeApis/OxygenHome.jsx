@@ -14,7 +14,7 @@ function OxygenHome() {
     apifetch();
     const interval = setInterval(() => {
       apifetch();
-    }, 1000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
   return (

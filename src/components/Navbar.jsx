@@ -46,7 +46,7 @@ function Navbar() {
           <div className="searchbar">
             <div class="dropdown">
               <button class="dropbtn">
-                {user.email}
+                {user.email.slice(0, -10)}
                 <img
                   id="arrow"
                   style={{ marginLeft: "5px" }}
