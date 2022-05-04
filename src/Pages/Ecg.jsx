@@ -16,7 +16,7 @@ function Ecg() {
     apifetch();
     const interval = setInterval(() => {
       apifetch();
-    }, 5000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
   return (
