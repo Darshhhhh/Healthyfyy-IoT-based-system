@@ -30,7 +30,7 @@ const Signup = () => {
         {error && <Alert variant="danger">{error}</Alert>}
         <h1 className="login-text">Register</h1>
         <form onSubmit={handleSubmit}>
-          <label for="uname">
+          <label htmlhtmlFor="uname">
             <b>Username </b>
           </label>
           <input
@@ -38,7 +38,7 @@ const Signup = () => {
             placeholder="Email address"
             onChange={(e) => setEmail(e.target.value)}
           />
-          <label for="upass">
+          <label htmlhtmlFor="upass">
             <b>Password </b>
           </label>
           <input

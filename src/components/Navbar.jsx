@@ -39,8 +39,8 @@ function Navbar() {
             Healthyfyy
           </h2>
           <div className="searchbar">
-            <div class="dropdown">
-              <button class="dropbtn">
+            <div className="dropdown">
+              <button className="dropbtn">
                 {user.email.slice(0, -10)}
                 <img
                   id="arrow"
@@ -49,7 +49,7 @@ function Navbar() {
                   alt=""
                 />
               </button>
-              <div class="dropdown-content">
+              <div className="dropdown-content">
                 <Link to="#">My Profile</Link>
                 <Link to="#">Settings</Link>
                 <Link onClick={handleLogout} style={{ padding: "0px" }}>

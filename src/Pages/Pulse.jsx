@@ -1,23 +1,26 @@
+import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
 import Navbar from "../components/Navbar";
+import { GlobalConstants } from "../Utils/GlobalConst";
 function Pulse() {
   const [data, setData] = useState([]);
 
-  const apifetch = () => {
-    fetch("https://reactinfotesting123.000webhostapp.com/pulsetable.php")
-      .then((response) => response.json())
-      .then((json) => {
-        setData(json.Pulse_Data);
-      });
-  };
   useEffect(() => {
-    apifetch();
-    const interval = setInterval(() => {
-      apifetch();
-    }, 1000);
-    return () => clearInterval(interval);
+    const api_Url = GlobalConstants.api_domain + "pulsetable.php";
+    axios
+      .get(api_Url)
+      .then(function (response) {
+        var res = response.data;
+        setData(res.Pulse_Data);
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      })
+      .then(function () {
+        // always executed
+      });
   }, []);
   return (
     <div>
@@ -35,15 +38,15 @@ function Pulse() {
             height: "25px",
           }}
         >
-          {/* <th>PULSE ID</th> */}
+          <th>PULSE ID</th>
           <th>Device ID</th>
           <th>PULSE Value</th>
           <th>Date-Time</th>
         </thead>
         <tbody>
-          {data.map((mydata) => (
+          {data?.map((mydata, index) => (
             <tr style={{ textAlign: "center" }}>
-              {/* <td>{mydata.PULSE_ID}</td> */}
+              <td>{index}</td>
               <td>{mydata.DEVICE_ID}</td>
               <td>{mydata.PULSE_VALUE}</td>
               <td>{mydata.ADDED_TIME}</td>

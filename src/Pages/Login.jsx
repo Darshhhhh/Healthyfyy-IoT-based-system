@@ -43,7 +43,7 @@ const Login = () => {
         {error && <Alert variant="danger">{error}</Alert>}
         <h2 className="login-text">Login</h2>
         <form onSubmit={handleSubmit}>
-          <label for="uname">
+          <label htmlFor="uname">
             <b>Username </b>
           </label>
           <input
@@ -52,7 +52,7 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
 
-          <label for="uname">
+          <label htmlFor="uname">
             <b>Password </b>
           </label>
           <input

@@ -6,7 +6,7 @@ function Support() {
   return (
     <div>
       <Navbar />
-      <div class="heading" id="Heading-page2">
+      <div className="heading" id="Heading-page2">
         <center>
           <h2>EMERGENCY CONTACTS</h2>
         </center>
