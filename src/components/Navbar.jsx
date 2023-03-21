@@ -2,16 +2,11 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import * as BiIcons from "react-icons/bi";
-import * as IoIcons from "react-icons/io";
 import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import "./Navbar.css";
-import { IconContext, BiSearchAlt } from "react-icons";
-import { Form, FormControl, Button } from "react-bootstrap";
-import Home from "../Pages/Home";
+import { IconContext } from "react-icons";
 import { useUserAuth } from "../context/UserAuthContext";
-// import { BrowserRouter as useNavigate } from "react-router";
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -51,14 +46,15 @@ function Navbar() {
                   id="arrow"
                   style={{ marginLeft: "5px" }}
                   src="https://img.icons8.com/ios-glyphs/15/ffffff/sort-down.png"
+                  alt=""
                 />
               </button>
               <div class="dropdown-content">
-                <a href="#">My Profile</a>
-                <a href="#">Settings</a>
-                <a onClick={handleLogout} style={{ padding: "0px" }}>
+                <Link to="#">My Profile</Link>
+                <Link to="#">Settings</Link>
+                <Link onClick={handleLogout} style={{ padding: "0px" }}>
                   <Link to="/">Log Out</Link>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

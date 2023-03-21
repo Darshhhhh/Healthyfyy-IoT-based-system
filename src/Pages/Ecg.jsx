@@ -2,23 +2,27 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
 import Navbar from "../components/Navbar";
+import { GlobalConstants } from "../Utils/GlobalConst";
+import axios from "axios";
+
 function Ecg() {
   const [data, setData] = useState([]);
-
-  const apifetch = () => {
-    fetch("https://reactinfotesting123.000webhostapp.com/ecgtable.php")
-      .then((response) => response.json())
-      .then((json) => {
-        setData(json.ECG_Data);
-      });
-  };
   useEffect(() => {
-    apifetch();
-    const interval = setInterval(() => {
-      apifetch();
-    }, 1000);
-    return () => clearInterval(interval);
+    const api_Url = GlobalConstants.api_domain + "ecgtable.php";
+    axios
+      .get(api_Url)
+      .then(function (response) {
+        var res = response.data;
+        setData(res.ECG_Data);
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      })
+      .then(function () {
+        // always executed
+      });
   }, []);
+
   return (
     <div>
       <Navbar />
@@ -35,15 +39,15 @@ function Ecg() {
             height: "25px",
           }}
         >
-          {/* <th>ECG ID</th> */}
+          <th>ECG ID</th>
           <th>Device ID</th>
           <th>ECG Value</th>
           <th>Date-Time</th>
         </thead>
         <tbody>
-          {data.map((mydata) => (
+          {data?.map((mydata, index) => (
             <tr style={{ textAlign: "center" }}>
-              {/* <td>{mydata.ECG_ID}</td> */}
+              <td>{index}</td>
               <td>{mydata.DEVICE_ID}</td>
               <td>{mydata.ECG_VALUE}</td>
               <td>{mydata.ADDED_TIME}</td>

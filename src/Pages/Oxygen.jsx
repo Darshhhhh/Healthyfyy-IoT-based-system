@@ -1,23 +1,26 @@
+import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
 import Navbar from "../components/Navbar";
+import { GlobalConstants } from "../Utils/GlobalConst";
 function Oxygen() {
   const [data, setData] = useState([]);
 
-  const apifetch = () => {
-    fetch("https://reactinfotesting123.000webhostapp.com/oxygentable.php")
-      .then((response) => response.json())
-      .then((json) => {
-        setData(json.Oxygen_Data);
-      });
-  };
   useEffect(() => {
-    apifetch();
-    const interval = setInterval(() => {
-      apifetch();
-    }, 1000);
-    return () => clearInterval(interval);
+    const api_Url = GlobalConstants.api_domain + "oxygentable.php";
+    axios
+      .get(api_Url)
+      .then(function (response) {
+        var res = response.data;
+        setData(res.Oxygen_Data);
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      })
+      .then(function () {
+        // always executed
+      });
   }, []);
   return (
     <div>
@@ -35,15 +38,15 @@ function Oxygen() {
             height: "25px",
           }}
         >
-          {/* <th>OXYGEN_ID</th> */}
+          <th>OXYGEN_ID</th>
           <th style={{ height: "30px" }}>Device ID</th>
           <th>Oxygen Value</th>
           <th>Date-Time</th>
         </thead>
         <tbody>
-          {data.map((mydata) => (
+          {data?.map((mydata, index) => (
             <tr style={{ textAlign: "center" }}>
-              {/* <td>{mydata.OXYGEN_ID}</td> */}
+              <td>{index}</td>
               <td>{mydata.DEVICE_ID}</td>
               <td>{mydata.OXYGEN_VALUE}</td>
               <td>{mydata.ADDED_TIME}</td>

@@ -1,14 +1,14 @@
 import React from "react";
 import "./Home.css";
 import { CardGroup, Card } from "react-bootstrap";
-import Navbar from "../components/Navbar";
-import * as FaIcons from "react-icons/fa";
 import TempHome from "../HomeApis/TempHome";
 import HeartBeatHome from "../HomeApis/HeartBeatHome";
 import OxygenHome from "../HomeApis/OxygenHome";
 import ECGHome from "../HomeApis/ECGHome";
+import * as FaIcons from "react-icons/fa";
 import * as IoIcons from "react-icons/io";
 import * as BsIcons from "react-icons/bs";
+import Navbar from "../components/Navbar";
 function Home() {
   return (
     <div className="home">
@@ -19,7 +19,7 @@ function Home() {
         <h6 style={{ fontSize: "11px" }}>– Denis Waitley</h6>
       </p>
       <hr id="hr" />
-      <div class="container">
+      <div className="container">
         <CardGroup>
           <Card>
             <div className="card1">
